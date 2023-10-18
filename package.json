@@ -1,0 +1,14 @@
+{
+  "name": "create-darwish",
+  "version": "0.0.1",
+  "description": "create a react library template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "create-darwish": "bin/index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
