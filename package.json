@@ -1,6 +1,6 @@
 {
   "name": "create-darwish",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "create a react library template",
   "main": "index.js",
   "scripts": {
