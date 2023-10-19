@@ -1,16 +1,23 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
+const { exec } = require('child_process');
+const { log } = require('console');
 const args = process.argv.slice(2);
-if (args.length < 2) {
-  console.error('Please enter at least 2 numbers');
-  process.exit(1); //an error occurred
+
+if (args.length > 1) {
+  console.log("请输入正确文件名");
+  return;
 }
 
-const total = args.reduce((previous, current) => parseFloat(current) * parseFloat(previous));
+exec(`mkdir ${args[0]}`, (err, stdout, stderr) => {
+  if (err) {
+    log(err);
+    return;
+  }
+})
 
-if (isNaN(total)) {
-  console.error('One or more arguments are not numbers');
-  process.exit(1); //an error occurred
-}
-
-console.log(total);
-process.exit(0); //n
+exec(`yarn create vite docs --template react`, (err, stdout, stderr) => {
+  if (err) {
+    log(err);
+    return;
+  }
+})
